@@ -1,0 +1,44 @@
+<h3>Короткова Анна Тестовое задание для <b>НДМ Систем</b> </h3>
+
+<p-table [value]="routes" [paginator]="false" [rows]="10" responsiveLayout="scroll">
+  <ng-template pTemplate="header">
+    <tr>
+      <th pSortableColumn="address">
+        Адрес назначения
+        <p-sortIcon field="address"></p-sortIcon>
+      </th>
+      <th pSortableColumn="mask">
+        Маска
+        <p-sortIcon field="mask"></p-sortIcon>
+      </th>
+      <th pSortableColumn="gateway">
+        Шлюз
+        <p-sortIcon field="gateway"></p-sortIcon>
+      </th>
+      <th pSortableColumn="interface">
+        Интерфейс
+        <p-sortIcon field="interface"></p-sortIcon>
+      </th>
+      <th pSortableColumn="uuid">
+        UUID
+        <p-sortIcon field="uuid"></p-sortIcon>
+      </th>
+    </tr>
+  </ng-template>
+
+  <ng-template pTemplate="body" let-route let-rowIndex="rowIndex">
+    <tr [ngStyle]="{ 'background-color': getRowColor(rowIndex) }">
+      <td>{{ route.address }}</td>
+      <td>{{ route.mask || '-' }}</td>
+      <td>{{ route.gateway }}</td>
+      <td>{{ getInterfaceName(route.interface) }}</td>
+      <td>{{ route.uuid || '-' }}</td>
+    </tr>
+  </ng-template>
+
+  <ng-template pTemplate="emptymessage">
+    <tr>
+      <td colspan="5">Нет маршрутов для отображения.</td>
+    </tr>
+  </ng-template>
+</p-table>

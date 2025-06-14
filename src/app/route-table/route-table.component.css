@@ -1,0 +1,35 @@
+h3 {
+  font-weight: 500;
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+.route-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+}
+
+.route-table th,
+.route-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.route-table th {
+  background-color: #f9f9f9;
+  cursor: pointer;
+  user-select: none;
+}
+
+.route-table th span {
+  margin-left: 4px;
+  font-size: 12px;
+  color: #666;
+}
+
+.route-table th span.active {
+  color: black;
+  font-weight: bold;
+}
